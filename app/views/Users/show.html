@@ -1,0 +1,23 @@
+<div class="panel panel-default">
+  <div class="panel-body" style="text-align:center;">
+    Nom: {{currentUser.name}}<br>
+    Prénom: {{currentUser.surname}}<br>
+    Mail: {{currentUser.email}}
+
+    <h3 ng-show="currentUserProjects.length" style="text-align:left;text-decoration:underline;">Les projets de l'utilisateurs :</h3>
+    <h3 ng-show="!currentUserProjects.length" style="text-align:left;text-decoration:underline;">Aucun projets pour cet utilisateur</h3>
+    <div id="accordion" class="panel-group" ng-repeat="projet in currentUserProjects">
+      <div class="panel panel-default">
+
+        <div class="panel-heading">
+          <h4 class="panel-title">
+            <a ng-href="/#/projects/{{projet.id}}">{{projet.title}}</a>
+          </h4>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<a style="float:right;" ng-href="/#/edit/{{currentUser.id}}" class="btn btn-default">Modifier</a>
+<a style="float:right;margin-right:5px;" class="btn btn-default" ng-href="/#/users">Retour à la liste des utilisateurs</a>

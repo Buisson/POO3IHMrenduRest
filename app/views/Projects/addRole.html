@@ -1,0 +1,9 @@
+<input class="form-control" id="name" placeholder="Nom du role" required/><br>
+<div class="form-group">
+  <label for="selectedId">Choisissez dans la liste l'utilisateur à ajouter:</label>
+  <select class="form-control" id="selectedId">
+    <option id="NULL"></option>
+    <option ng-repeat="user in users" id="{{user.id}}">{{user.name}} , {{user.surname}}</option>
+  </select>
+</div>
+<button style="float:right;" class="btn btn-default" ng-click="ajoutRole({{currentProjet}});">Ajouter l'utilisateur au Projet</button>

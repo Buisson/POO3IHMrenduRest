@@ -1,0 +1,9 @@
+<a class="btn-default btn" ng-href="/#/projects/add">Ajouter un projet</a>
+
+<h3>Liste des projets:</h3>
+<label>Rechercher: <input ng-model="searchText"></label>
+<div class="list-group">
+  <div id="blockIDProject{{projet.id}}" class="list-group-item" ng-repeat="projet in projets | filter:searchText">
+    <a ng-href="/#/projects/{{projet.id}}" > {{projet.title}}</a><img style="float:right;cursor:pointer;" src="images/croixSupr.png" ng-click="supprimmerIdProjet({{projet.id}});"/>
+  </div>
+</div>

@@ -1,0 +1,13 @@
+node_modules
+de_modules
+dist
+.tmp
+.sass-cache
+bower_components
+.idea
+test
+.editorconfig
+.gitattributes
+poo_ihm_exemples.sublime-project
+poo_ihm_exemples.sublime-workspace
+

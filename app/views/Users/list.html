@@ -1,0 +1,11 @@
+<!--{{users}}-->
+<div>
+  <a class="btn-default btn" ng-href="/#/add">ajouter un utilisateur</a>
+<h3>Liste des utilisateurs:</h3>
+  <label>Rechercher: <input ng-model="searchText"></label>
+<div class="list-group">
+  <div id="blockIDUser{{user.id}}" class="list-group-item" ng-repeat="user in users | filter:searchText">
+    <a ng-href="/#/users/{{user.id}}" > {{user.name}}, {{user.surname}}</a><img style="float:right;cursor:pointer;" src="images/croixSupr.png" ng-click="supprimmerId({{user.id}});"/>
+  </div>
+</div>
+</div>

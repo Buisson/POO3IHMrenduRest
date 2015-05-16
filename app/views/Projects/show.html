@@ -1,0 +1,30 @@
+<div class="panel panel-default">
+  <div class="panel-body" style="text-align:center;">
+    Titre: {{currentProjet.title}}<br>
+    description: {{currentProjet.description}}<br>
+    année: {{currentProjet.year}}
+    <div class="panel-group">
+
+      <div class="panel panel-default" id="blockRole{{tableauRoles[$index].id}}" ng-repeat="user in tableauUser track by $index">
+        <div class="panel-heading">
+          <table style="width:100%;"><tr>
+            <td>
+              <h4 class="panel-title">
+                Nom : {{user.name}}<br>
+                Prénom : {{user.surname}}<br>
+                Role : {{tableauRoles[$index].name}}<br>
+              </h4>
+            </td>
+            <td>
+              <img style="float:right;cursor:pointer;" src="images/croixSupr.png" ng-click="supprimerRole({{tableauRoles[$index].id}});"/>
+            </td>
+            </tr></table>
+        </div>
+      </div>
+
+    </div>
+    <a style="float:right;" ng-href="/#/projects/addRole/{{currentProjet.id}}" class="btn btn-default">Ajouter un utilisateur</a>
+  </div>
+</div>
+<a style="float:right;" ng-href="/#/projects/edit/{{currentProjet.id}}" class="btn btn-default">Modifier</a>
+<a style="float:right;margin-right:5px;" class="btn btn-default" ng-href="/#/projects">Retour à la liste des projets</a>
